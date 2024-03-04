@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: gray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
+  margin: 50px 50px;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px 0 10px;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  height: 50px;
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  height: 50px;
+  border-radius: 15px;
+  appearance: none;
+  background-color: white;
+  border: none;
+  padding: 10px 35px 10px 15px;
+  font-size: 18px;
+  outline: none;
+}
+
+.searchInput::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.searchIcon {
+  width: 25px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 13px;
+  right: 5px;
+}
+
+.clearIcon {
+  width: 28px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 13px;
+  right: 28px;
+}
+
+.movieContainer {
+  margin-top: 20px;
+  margin-bottom: 200px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 80%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movieCard {
+  background-color: #fff;
+  height: 300px;
+  width: 19%;
+  border-radius: 5px;
 }
