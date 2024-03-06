@@ -16,7 +16,7 @@ function App() {
     fetch(API_URL)
     .then(res=>res.json())
     .then(data=>{
-      console.log(data)
+      // console.log(data)
       setMovies(data.results)
     })
   }, []);
@@ -36,7 +36,7 @@ function App() {
       console.log(e);
     }
   }
-  
+
   
   const changeHandler=(e)=>{
     setQuery(e.target.value);
