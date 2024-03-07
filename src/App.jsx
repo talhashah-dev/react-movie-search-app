@@ -12,14 +12,20 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [query, setQuery]=useState('');
   
-  useEffect(() => {
-    fetch(API_URL)
-    .then(res=>res.json())
-    .then(data=>{
-      // console.log(data)
-      setMovies(data.results)
-    })
-  }, []);
+
+  try {
+    useEffect(() => {
+      fetch(API_URL)
+      .then(res=>res.json())
+      .then(data=>{
+        // console.log(data)
+        setMovies(data.results)
+      })
+    }, []);
+  } catch (error) {
+    console.log("Error" , error)
+  }
+  
 
 
   const searchMovie = async(e)=>{
@@ -71,7 +77,7 @@ function App() {
     </Navbar>
     <div>
       {movies.length > 0 ?(
-        <div className="container">
+        <div className="container-fluid mt-3">
         <div className="grid">
           {movies.map((movieReq)=>
           <MovieBox key={movieReq.id} {...movieReq}/>)}
